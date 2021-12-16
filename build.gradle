@@ -1,6 +1,15 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
+
+test {
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+} 
 
 repositories {
     mavenCentral()
